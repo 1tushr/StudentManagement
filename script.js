@@ -76,11 +76,10 @@ function searchMe() {
 function edit(id) {
   console.log('Edit function called with ID:', id);
   
-  // Find the student object with a matching ID
   const student = students.find((student) => student.ID == id);
   
   if (student) {
-    // Populate input fields with the student's information
+
     document.getElementById('name').value = student.name;
     document.getElementById('email').value = student.email;
     document.getElementById('age').value = student.age;
@@ -90,7 +89,7 @@ function edit(id) {
     // Change the text of the submit button to "Edit Student"
     document.getElementById('submit').innerText = 'Edit Student';
     
-    // Add an event listener to the submit button
+    
     document.getElementById("submit").onclick = function() {
       // Update the student's information
       student.name = document.getElementById('name').value;
@@ -106,10 +105,9 @@ function edit(id) {
       document.getElementById('gpa').value = "";
       document.getElementById('degree').value = "";
       
-      // Change the text of the submit button back to "Add Student"
+    
       document.getElementById('submit').innerText = 'Add Student';
       
-      // Update the table row with the updated student information
       const table = document.getElementById('tbody');
       for (let i = 0; i < table.rows.length; i++) {
         let row = table.rows[i];
